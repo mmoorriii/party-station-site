@@ -9,6 +9,8 @@ $(document).ready(function () {
          centerMode: true,
       });
    } else {
-      $('.block4__slider').slick('unslick');
+      if ($.isFunction($.fn.slick) && $('.block4__slider').hasClass('slick-initialized')) {
+         $('.block4__slider').slick('unslick');
+      }
    }
 });

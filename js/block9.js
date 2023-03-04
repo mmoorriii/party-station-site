@@ -28,7 +28,11 @@ $(document).ready(function () {
          ]
       });
    } else {
-      $('.block9__slider-top').slick('unslick');
-      $('.block9__slider-bottom').slick('unslick');
+      if ($.isFunction($.fn.slick) && $('.block9__slider-top').hasClass('slick-initialized')) {
+         $('.block9__slider-top').slick('unslick');
+      }
+      if ($.isFunction($.fn.slick) && $('.block9__slider-bottom').hasClass('slick-initialized')) {
+         $('.block9__slider-bottom').slick('unslick');
+      }
    }
 });

@@ -31,9 +31,15 @@ $(document).ready(function () {
          waitForAnimate: false,
       });
    } else {
-      $('.block7__row-news').slick('unslick');
-      $('.block7__row-for-family').slick('unslick');
-      $('.block7__row-for-clever').slick('unslick');
+      if ($('.block7__row-news').hasClass('slick-initialized')) {
+         $('.block7__row-news').slick('unslick');
+      }
+      if ($('.block7__row-for-family').hasClass('slick-initialized')) {
+         $('.block7__row-for-family').slick('unslick');
+      }
+      if ($('.block7__row-for-clever').hasClass('slick-initialized')) {
+         $('.block7__row-for-clever').slick('unslick');
+      }
    };
 
    $('.block7__row-news').on('afterChange', function (event, slick, currentSlide) {
